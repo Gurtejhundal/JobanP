@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.playwright-cli/
+.prototype-seed/
+output/
+design-qa.md
+*.log
+.env*
+!.env.example
