@@ -10,9 +10,12 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Durable Portfolio Direction
 
-- Preserve the reference site's editorial cream/charcoal structure, identity reveal, portrait-led intro, circular skill field, project studies, research papers, horizontal milestone rail, and contact finish.
-- Keep display type materially smaller and more readable than the reference.
-- Use the local Gloock, Hanken Grotesk, and IBM Plex Mono font system; do not revert to the reference site's common serif treatment.
+- The portfolio is now an original "Swiss field notes" system. Do not use Aayush Soni's portfolio or any other live portfolio as a structural source.
+- The supplied hero image is the source of truth only for hero anatomy: left statement, central portrait, right proof points, and a capability strip below.
+- Use compact editorial grids, rules, ledgers, warm bone, near-black, and one signal-red accent. Avoid the previous identity reveal gate, circular skill field, and stacked-paper research treatment.
+- Use the local Gloock, Hanken Grotesk, and IBM Plex Mono font system. Keep display type compact and readable.
 - Mobile layouts must be intentionally reflowed with no accidental horizontal overflow or cropped content.
 - Do not publish Aayush Soni's portrait, achievements, project claims, education, or contact details as Jobanpreet Singh's.
-- Use cinematic, performance-safe spatial motion inspired by the reference portfolios: layered portrait depth, paper/card perspective, and deliberate section transitions. Avoid random particles, decorative 3D clutter, and scroll hijacking.
+- Skills must use a rectangular capability ledger that matches the broader design language.
+- The milestone chapter is the only desktop pinned horizontal sequence; vertical scrolling must resume after it. On smaller screens, use native scrolling without pinning.
+- Use performance-safe staged motion and restrained image parallax. Avoid random particles, decorative 3D clutter, continuous pointer loops, and document-level scroll hijacking.

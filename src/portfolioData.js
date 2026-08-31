@@ -8,13 +8,10 @@ export const profile = {
 };
 
 export const navItems = [
-  ["About", "dossier"],
   ["Skills", "skills"],
-  ["Experience", "experience"],
-  ["Projects", "projects"],
-  ["Research", "research"],
-  ["Milestones", "achievements"],
-  ["Background", "education"],
+  ["Work", "projects"],
+  ["Notes", "research"],
+  ["Journey", "achievements"],
   ["Contact", "contact"],
 ];
 
