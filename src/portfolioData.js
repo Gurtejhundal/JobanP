@@ -1,10 +1,13 @@
 export const profile = {
-  name: "Jobanpreet Singh",
+  name: "Jobanpreet Singh Gill",
   shortName: "Jobanpreet",
-  role: "Developer & digital builder",
+  role: "Computer Science Student & Software Builder",
   strapline:
-    "A considered home for thoughtful software, useful experiments, and work built with care.",
-  status: "Independent portfolio / 2026",
+    "A considered home for thoughtful software, AI/ML experiments, and engineering built with care.",
+  status: "Open for Opportunities / 2026",
+  github: "https://github.com/Joban33",
+  linkedin: "https://www.linkedin.com/in/jobanpreet-singh-gill/",
+  email: "jobanpreetsinghgill@gmail.com",
 };
 
 export const navItems = [
@@ -12,13 +15,14 @@ export const navItems = [
   ["Work", "projects"],
   ["Notes", "research"],
   ["Journey", "achievements"],
+  ["Credentials", "education"],
   ["Contact", "contact"],
 ];
 
 export const skills = [
-  "JavaScript", "React", "TypeScript", "Node.js", "Python", "APIs",
-  "Git", "Databases", "Testing", "Accessibility", "Performance", "UI Systems",
-  "Research", "Prototyping", "Communication", "Curiosity", "Craft", "Reliability",
+  "JavaScript", "React", "TypeScript", "Python", "C++", "Vite",
+  "Node.js", "APIs", "Git", "AI / ML", "Generative AI", "Data Science",
+  "Testing", "UI Systems", "Algorithms", "Leadership", "Craft", "Execution",
 ];
 
 export const openSourceCards = [
@@ -39,100 +43,147 @@ export const openSourceCards = [
 export const projects = [
   {
     index: "01",
-    date: "Starter study",
-    title: "Terra Signal",
+    date: "Featured build",
+    title: "Image Converter",
     image: "/assets/project-climate.png",
+    repo: "https://github.com/Joban33/Image-Converter",
     summary:
-      "A product-study placeholder for turning live environmental signals into a calm, legible decision surface.",
+      "A fast, distraction-free web utility to convert, compress, and process images with focused tooling and instant client-side feedback.",
     details:
-      "This concept explores how live environmental data can become a focused decision surface without overwhelming the person reading it.",
-    tags: ["Data UI", "React", "Systems"],
+      "Built with Vite, React, and modern JavaScript to eliminate friction in routine image asset workflows. Eliminates upload wait times by leveraging browser-based conversion and clean responsive UI controls.",
+    tags: ["React", "Vite", "JavaScript", "Web Tool"],
   },
   {
     index: "02",
-    date: "Starter study",
-    title: "Open Access",
+    date: "AI Engineering",
+    title: "Sentinal-AI",
     image: "/assets/project-accessibility.png",
+    repo: "https://github.com/Joban33/Sentinal-AI",
     summary:
-      "An accessibility-first media concept with adaptable controls, strong focus states, and restrained motion.",
+      "An AI-powered monitoring and intelligence platform designed to extract meaningful signals from structured data streams.",
     details:
-      "This concept studies adaptable controls, visible focus, restrained motion, and media that remains useful across different access needs.",
-    tags: ["A11y", "Interaction", "Research"],
+      "Explores applied machine learning, automated inference, and typed system architecture to synthesize operational data into clear, actionable summaries.",
+    tags: ["TypeScript", "AI / ML", "Systems", "Automation"],
   },
   {
     index: "03",
-    date: "Starter study",
-    title: "Orbit Notes",
+    date: "Core Systems",
+    title: "Aeternum",
     image: "/assets/project-knowledge.png",
+    repo: "https://github.com/Joban33/Aeternum",
     summary:
-      "A quiet knowledge-mapping concept for connecting notes, sources, and decisions without visual noise.",
+      "An exploratory TypeScript systems project studying modular boundaries, type guarantees, and scalable state workflows.",
     details:
-      "This concept studies the relationship between notes, sources, and decisions through a calm visual map that keeps context close.",
-    tags: ["Knowledge", "Product", "UI"],
+      "Focuses on clean software boundaries, deterministic runtime behavior, and maintainable execution patterns across interconnected components.",
+    tags: ["TypeScript", "Architecture", "Experiments"],
   },
 ];
 
 export const researchNotes = [
   {
-    code: "NOTE_01 / HUMAN",
-    date: "Ongoing",
-    title: "Human interfaces",
-    affiliation: "Topics to explore",
+    code: "NOTE_01 / GEN-AI",
+    date: "2026",
+    title: "Generative AI & Studio Architectures",
+    affiliation: "Google Cloud / Simplilearn",
     detail:
-      "How can software reveal depth gradually without making the first interaction harder?",
+      "Examining how prompt orchestration, multimodal models, and low-latency inference integrate into intuitive, human-centered UI surfaces.",
   },
   {
     code: "NOTE_02 / SYSTEMS",
-    date: "Ongoing",
-    title: "Calm complexity",
-    affiliation: "Topics to explore",
+    date: "2026",
+    title: "Low-level Systems & C++ Foundations",
+    affiliation: "Cisco Networking Academy / OpenEDG",
     detail:
-      "How do we keep rich systems understandable when data, motion, and context all compete for attention?",
+      "Investigating deterministic memory management, computational efficiency, and robust data structures for dependable software builds.",
+  },
+  {
+    code: "NOTE_03 / INTERFACES",
+    date: "Ongoing",
+    title: "Calm Complexity in Software",
+    affiliation: "Design Engineering",
+    detail:
+      "How do we present rich data and AI capabilities without overwhelming the user's attention or breaking accessibility boundaries?",
   },
 ];
 
 export const milestones = [
   {
-    index: "01", eyebrow: "FOUNDATION", title: "A distinct portfolio system",
-    description: "The visual language, content model, responsive rules, and interaction states are ready for real material.",
-    image: "/assets/portrait-placeholder.png", tag: "Built for Joban",
+    index: "01",
+    eyebrow: "FOUNDATIONS",
+    title: "Core Programming & Logic",
+    description:
+      "Rigorous training across C++ (Cisco Networking Academy) and Python (GeeksforGeeks SkillUp), establishing strong computational fundamentals.",
+    image: "/assets/project-accessibility.png",
+    tag: "Certified Foundations",
   },
   {
-    index: "02", eyebrow: "QUALITY", title: "Readable at every size",
-    description: "Smaller type, sensible line lengths, touch-sized controls, and no accidental mobile overflow.",
-    image: "/assets/project-accessibility.png", tag: "Accessible by design",
+    index: "02",
+    eyebrow: "INTELLIGENCE",
+    title: "Generative AI & ML Systems",
+    description:
+      "Completion of Google Cloud Generative AI Studio, Infosys Springboard AI, and BlockseBlock AI Hands-on Bootcamp.",
+    image: "/assets/project-climate.png",
+    tag: "Applied AI",
   },
   {
-    index: "03", eyebrow: "NEXT", title: "Ready for true stories",
-    description: "Add Joban's photo, education, links, experience, and projects without rebuilding the visual system.",
-    image: "/assets/project-knowledge.png", tag: "Content-ready",
+    index: "03",
+    eyebrow: "EXECUTION",
+    title: "Building & Shipping Products",
+    description:
+      "Delivering open-source utilities like Image Converter, AI Sentinels, and modular web interfaces built for real utility.",
+    image: "/assets/project-knowledge.png",
+    tag: "Active Shipping",
   },
 ];
 
 export const backgroundCards = [
   {
-    number: "[01]", period: "PROFILE DATA", status: "Ready to add", location: "Joban's location",
-    title: "Education details", subtitle: "Institute, course, and dates",
+    number: "[01]",
+    period: "ACADEMICS",
+    status: "In Progress",
+    location: "Computer Science",
+    title: "Computer Science & Engineering",
+    subtitle: "Software Engineering, Data Structures & Algorithms",
     bullets: [
-      "Replace this with Joban's verified course and institute.",
-      "Add only results or distinctions he wants to publish.",
-      "Keep descriptions concise and evidence-based.",
+      "Focus on system design, algorithmic problem solving, and modern full-stack engineering.",
+      "Hands-on coursework covering object-oriented programming, data structures, and web technologies.",
+      "Active commitment to building real-world projects alongside foundational theory.",
     ],
-    result: "Awaiting verified details",
+    result: "B.Tech / Computer Science",
   },
   {
-    number: "[02]", period: "PROFILE DATA", status: "Ready to add", location: "Joban's location",
-    title: "Professional background", subtitle: "Roles, collaborations, and learning",
+    number: "[02]",
+    period: "CREDENTIALS",
+    status: "Verified",
+    location: "Global Industry Certifications",
+    title: "Technical Certifications & Accreditations",
+    subtitle: "Cisco, Google Cloud, Infosys, GeeksforGeeks, OpenxAI",
     bullets: [
-      "Add the work Joban can discuss publicly.",
-      "Describe his actual contribution, not just the team outcome.",
+      "C++ Essentials 1 — Cisco Networking Academy & OpenEDG (Jan 2026)",
+      "Introduction to Generative AI Studio — Google Cloud / Simplilearn (Jan 2026, Code: 9786973)",
+      "Introduction to Artificial Intelligence — Infosys Springboard (Mar 2026)",
+      "Hands-on AI Bootcamp — BlockseBlock & OpenxAI (Aug 2025)",
+      "Python Skill Up — GeeksforGeeks & Nation SkillUp",
+      "Leadership Fundamentals — EduTech Hub (Oct 2025, Code: EDU/10/25/LF-A671)",
     ],
-    result: "Awaiting verified details",
+    result: "6 Verified Accreditations",
   },
 ];
 
 export const contactItems = [
-  ["GitHub", "Code & projects"],
-  ["LinkedIn", "Professional network"],
-  ["Email", "Direct communication"],
+  {
+    label: "GitHub",
+    detail: "github.com/Joban33",
+    url: "https://github.com/Joban33",
+  },
+  {
+    label: "LinkedIn",
+    detail: "linkedin.com/in/jobanpreet-singh-gill",
+    url: "https://www.linkedin.com/in/jobanpreet-singh-gill/",
+  },
+  {
+    label: "Email",
+    detail: "jobanpreetsinghgill@gmail.com",
+    url: "mailto:jobanpreetsinghgill@gmail.com",
+  },
 ];

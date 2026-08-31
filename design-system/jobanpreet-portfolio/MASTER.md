@@ -1,4 +1,4 @@
-# Design System Master File
+# Design System Master File — Jobanpreet Portfolio
 
 > **LOGIC:** When building a specific page, first check `design-system/pages/[page-name].md`.
 > If that file exists, its rules **override** this Master file.
@@ -6,10 +6,9 @@
 
 ---
 
-**Project:** Jobanpreet Portfolio
-**Generated:** 2026-08-30 11:59:34
-**Category:** Developer Tool / IDE
-**Design Dials:** Variance 7/10 (Balanced / Modern) | Motion 8/10 (Complex) | Density 6/10 (Standard)
+**Project:** Jobanpreet Portfolio  
+**Design Philosophy:** Swiss Field Notes (Monochrome / High Contrast / Technical Editorial)  
+**Persona:** Jobanpreet Singh Gill — Computer Science Student & Software Builder  
 
 ---
 
@@ -17,211 +16,36 @@
 
 ### Color Palette
 
-| Role | Hex | CSS Variable |
-|------|-----|--------------|
-| Primary | `#18181B` | `--color-primary` |
-| On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#3F3F46` | `--color-secondary` |
-| Accent/CTA | `#2563EB` | `--color-accent` |
-| Background | `#FAFAFA` | `--color-background` |
-| Foreground | `#09090B` | `--color-foreground` |
-| Muted | `#E8ECF0` | `--color-muted` |
-| Border | `#E4E4E7` | `--color-border` |
-| Destructive | `#DC2626` | `--color-destructive` |
-| Ring | `#18181B` | `--color-ring` |
-
-**Color Notes:** Monochrome + blue accent
+| Role | Hex / Value | CSS Variable | Usage |
+|:---|:---|:---|:---|
+| Primary Surface | `#ebe8df` | `--bone` | Base warm canvas |
+| Raised Paper | `#f5f2ea` | `--paper` | Elevated card surfaces, dialog background |
+| Primary Ink | `#11120f` | `--ink` | High-contrast typography & dark chapter backgrounds |
+| Muted Ink | `#666960` | `--muted` | Secondary copy, descriptors, footnotes |
+| Signal Red | `#e14b31` | `--signal` | Sole accent (<10% surface) for active state, progress & focus |
+| Hairline Rule | `rgba(17, 18, 15, 0.2)` | `--line` | Structural dividing borders |
+| Light Rule | `rgba(245, 242, 234, 0.22)` | `--line-light`| Borders on dark ink sections |
 
 ### Typography
 
-- **Heading Font:** Playfair Display
-- **Body Font:** Source Serif 4
-- **Mood:** monochrome, editorial, austere, typographic, pocket manifesto, luxury, high contrast, brutalist mobile
-- **Google Fonts:** [Playfair Display + Source Serif 4](https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400|Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300)
-
-**CSS Import:**
-```css
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap');
-```
-
-### Spacing Variables
-
-*Density: 6/10 — Standard*
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-xs` | `4px` / `0.25rem` | Tight gaps |
-| `--space-sm` | `8px` / `0.5rem` | Icon gaps, inline spacing |
-| `--space-md` | `16px` / `1rem` | Standard padding |
-| `--space-lg` | `24px` / `1.5rem` | Section padding |
-| `--space-xl` | `32px` / `2rem` | Large gaps |
-| `--space-2xl` | `48px` / `3rem` | Section margins |
-| `--space-3xl` | `64px` / `4rem` | Hero padding |
-
-### Shadow Depths
-
-| Level | Value | Usage |
-|-------|-------|-------|
-| `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)` | Subtle lift |
-| `--shadow-md` | `0 4px 6px rgba(0,0,0,0.1)` | Cards, buttons |
-| `--shadow-lg` | `0 10px 15px rgba(0,0,0,0.1)` | Modals, dropdowns |
-| `--shadow-xl` | `0 20px 25px rgba(0,0,0,0.15)` | Hero images, featured cards |
+- **Display & Interface:** Hanken Grotesk (`/fonts/hanken-grotesk-latin.woff2`)
+- **Editorial Accent:** Gloock Italic (`/fonts/gloock-latin.woff2`)
+- **Technical & Metadata:** IBM Plex Mono 400 & 500 (`/fonts/ibm-plex-mono-400-latin.woff2`, `/fonts/ibm-plex-mono-500-latin.woff2`)
 
 ---
 
-## Component Specs
+## Motion System
 
-### Buttons
-
-```css
-/* Primary Button */
-.btn-primary {
-  background: #2563EB;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background: transparent;
-  color: #18181B;
-  border: 2px solid #18181B;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
-```
-
-### Cards
-
-```css
-.card {
-  background: #FAFAFA;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: var(--shadow-md);
-  transition: all 200ms ease;
-  cursor: pointer;
-}
-
-.card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-```
-
-### Inputs
-
-```css
-.input {
-  padding: 12px 16px;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 200ms ease;
-}
-
-.input:focus {
-  border-color: #18181B;
-  outline: none;
-  box-shadow: 0 0 0 3px #18181B20;
-}
-```
-
-### Modals
-
-```css
-.modal-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-
-.modal {
-  background: white;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: var(--shadow-xl);
-  max-width: 500px;
-  width: 90%;
-}
-```
+- **Hero Entrance:** GSAP staged staggered reveal (`power3.out`).
+- **Parallax:** Restrained vertical image travel (`data-parallax`).
+- **Milestone Chapter:** Desktop-only pinned horizontal scrub (`anticipatePin: 1`, `scrub: 0.72`).
+- **Mobile Fallback:** CSS touch `scroll-snap-type: inline mandatory`, no pinning.
+- **Accessibility:** Immediate static display under `prefers-reduced-motion: reduce`.
 
 ---
 
-## Style Guidelines
+## Content Guardrails
 
-**Style:** Swiss Modernism 2.0
-
-**Keywords:** Grid system, Helvetica, modular, asymmetric, international style, rational, clean, mathematical spacing
-
-**Best For:** Corporate sites, architecture, editorial, SaaS, museums, professional services, documentation
-
-**Key Effects:** display: grid, grid-template-columns: repeat(12 1fr), gap: 1rem, mathematical ratios, clear hierarchy
-
-### Page Pattern
-
-**Pattern Name:** Portfolio Grid
-
-- **Conversion Strategy:** Visuals first. Filter by category. Fast loading essential.
-- **CTA Placement:** Project Card Hover + Footer Contact
-- **Section Order:** 1. Hero (Name/Role), 2. Project Grid (Masonry), 3. About/Philosophy, 4. Contact
-
----
-
-## Motion
-
-**Page Transition** (Complex) — Trigger: route change | Duration: 500-800ms | Easing: `expo.inOut`
-
-```js
-const state = Flip.getState('.hero-image'); navigate(); Flip.from(state, { duration: 0.6, ease: 'expo.inOut', absolute: true, zIndex: 100 });
-```
-
-**Framework notes:** Requires the GSAP Flip plugin; the 'from' and 'to' route must render the same element with a shared data-flip-id
-
-- ✅ Verify the shared element exists in both DOM states before calling Flip.from to avoid a silent no-op
-- ❌ Don't use shared-element transitions across more than one element pair per navigation; compounding Flips are hard to time correctly
-- ⚡ Flip recalculates layout (FLIP technique) so test on low-end devices for jank
-
----
-
-## Anti-Patterns (Do NOT Use)
-
-- ❌ Light mode default
-- ❌ Slow performance
-
-### Additional Forbidden Patterns
-
-- ❌ **Emojis as icons** — Use SVG icons (Heroicons, Lucide, Simple Icons)
-- ❌ **Missing cursor:pointer** — All clickable elements must have cursor:pointer
-- ❌ **Layout-shifting hovers** — Avoid scale transforms that shift layout
-- ❌ **Low contrast text** — Maintain 4.5:1 minimum contrast ratio
-- ❌ **Instant state changes** — Always use transitions (150-300ms)
-- ❌ **Invisible focus states** — Focus states must be visible for a11y
-
----
-
-## Pre-Delivery Checklist
-
-Before delivering any UI code, verify:
-
-- [ ] No emojis used as icons (use SVG instead)
-- [ ] All icons from consistent icon set (Heroicons/Lucide)
-- [ ] `cursor-pointer` on all clickable elements
-- [ ] Hover states with smooth transitions (150-300ms)
-- [ ] Light mode: text contrast 4.5:1 minimum
-- [ ] Focus states visible for keyboard navigation
-- [ ] `prefers-reduced-motion` respected
-- [ ] Responsive: 375px, 768px, 1024px, 1440px
-- [ ] No content hidden behind fixed navbars
-- [ ] No horizontal scroll on mobile
+1. Truthful credentials only: Jobanpreet Singh Gill's verified Cisco, Google Cloud, Infosys, GeeksforGeeks, and OpenxAI certifications.
+2. Verified project repositories: Direct links to Joban33's GitHub repositories (`Image-Converter`, `Sentinal-AI`, `Aeternum`).
+3. Direct contact channels: GitHub (`Joban33`), LinkedIn (`jobanpreet-singh-gill`), and email (`jobanpreetsinghgill@gmail.com`).

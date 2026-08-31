@@ -32,13 +32,13 @@ const skillGroups = [
   {
     index: "02",
     title: "System",
-    note: "The practical layer that keeps software dependable and fast.",
+    note: "The practical layer that keeps software dependable, intelligent, and fast.",
     items: skills.slice(6, 12),
   },
   {
     index: "03",
     title: "Craft",
-    note: "Human skills that make the finished product easier to understand.",
+    note: "Engineering disciplines and standards that deliver real product execution.",
     items: skills.slice(12),
   },
 ];
@@ -62,10 +62,10 @@ const principles = [
 ];
 
 const heroCapabilities = [
-  ["01", "Interface systems", "Clear components and resilient layouts."],
-  ["02", "Accessible interaction", "Keyboard, contrast, focus, and motion."],
-  ["03", "API-minded builds", "Interfaces shaped around useful data."],
-  ["04", "Rapid prototypes", "Ideas tested in working software."],
+  ["01", "Interface systems", "Clear components, responsive grids, and resilient layouts."],
+  ["02", "AI & ML integration", "Generative AI pipelines, studio architectures, and structured agents."],
+  ["03", "Systems & performance", "Typed data pipelines, low-latency execution, and C++ foundations."],
+  ["04", "Practical execution", "Focused web utilities and tools shipped to production."],
 ];
 
 const trackedSectionIds = ["dossier", ...navItems.map(([, id]) => id)];
@@ -91,9 +91,9 @@ function SectionHeader({ index, eyebrow, title, light = false }) {
 function Header({ activeSection, menuOpen, setMenuOpen }) {
   return (
     <header className="site-header">
-      <a className="brand" href="#dossier" aria-label="Jobanpreet Singh, back to top">
-        <span className="brand__mark">JS</span>
-        <span className="brand__name">Jobanpreet<br />Singh</span>
+      <a className="brand" href="#dossier" aria-label="Jobanpreet Singh Gill, back to top">
+        <span className="brand__mark">JSG</span>
+        <span className="brand__name">Jobanpreet<br />Singh Gill</span>
       </a>
 
       <nav
@@ -116,9 +116,14 @@ function Header({ activeSection, menuOpen, setMenuOpen }) {
         ))}
       </nav>
 
-      <a className="header-cta" href="#contact">
-        Start a conversation
-        <ArrowDownRight aria-hidden="true" size={17} strokeWidth={1.6} />
+      <a
+        className="header-cta"
+        href="https://github.com/Joban33"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub Profile
+        <ArrowUpRight aria-hidden="true" size={17} strokeWidth={1.6} />
       </a>
 
       <button
@@ -170,7 +175,7 @@ function ProjectDialog({ project, onClose }) {
           Close <X aria-hidden="true" size={18} />
         </button>
         <div className="project-dialog__image">
-          <img src={project.image} alt="" />
+          <img src={project.image} alt={project.title} />
         </div>
         <div className="project-dialog__copy">
           <p className="mono-label">{project.index} / {project.date}</p>
@@ -179,7 +184,21 @@ function ProjectDialog({ project, onClose }) {
           <ul className="tag-list" aria-label="Project tags">
             {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
           </ul>
-          <p className="dialog-note">Concept study — replace with verified project material when it is available.</p>
+          {project.repo && (
+            <div style={{ marginTop: "1.5rem" }}>
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="primary-action"
+                style={{ display: "inline-flex", marginTop: 0 }}
+              >
+                View Repository on GitHub
+                <ArrowUpRight aria-hidden="true" size={17} strokeWidth={1.6} />
+              </a>
+            </div>
+          )}
+          <p className="dialog-note">Open-source build repository on GitHub.</p>
         </div>
       </section>
     </div>
@@ -192,7 +211,6 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("dossier");
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [notice, setNotice] = useState("");
 
   useEffect(() => {
     const sections = trackedSectionIds
@@ -216,16 +234,6 @@ export default function Portfolio() {
     return () => document.body.classList.remove("menu-open");
   }, [menuOpen]);
 
-  useEffect(() => {
-    if (!notice) return undefined;
-    const timer = window.setTimeout(() => setNotice(""), 3600);
-    return () => window.clearTimeout(timer);
-  }, [notice]);
-
-  const showUnverifiedNotice = (label) => {
-    setNotice(`${label} is ready to connect when Joban's verified link is supplied.`);
-  };
-
   const closeProject = useCallback(() => setSelectedProject(null), []);
 
   const scrollMilestones = (direction) => {
@@ -247,15 +255,15 @@ export default function Portfolio() {
       <main id="main-content">
         <section id="dossier" className="hero" data-section>
           <div className="hero__statement">
-            <p className="hero__hello" data-hero="label">Hello, I&apos;m Joban.</p>
-            <h1 aria-label="Developer and digital builder">
-              <span data-hero="line">Developer</span>
-              <span className="hero__serif" data-hero="line">&amp; digital</span>
+            <p className="hero__hello" data-hero="label">Hello, I&apos;m Jobanpreet.</p>
+            <h1 aria-label="Software builder and computer science student">
+              <span data-hero="line">Software</span>
+              <span className="hero__serif" data-hero="line">&amp; systems</span>
               <span data-hero="line">builder</span>
             </h1>
             <p className="hero__lead" data-hero="copy">{profile.strapline}</p>
             <a className="primary-action" href="#projects" data-hero="copy">
-              View selected studies
+              View selected builds
               <ArrowDownRight aria-hidden="true" size={19} strokeWidth={1.6} />
             </a>
           </div>
@@ -263,12 +271,12 @@ export default function Portfolio() {
           <figure className="hero__portrait" data-hero="portrait">
             <div className="hero__portrait-frame">
               <img
-                src="/assets/portrait-placeholder.png"
-                alt="Anonymous portrait placeholder for Jobanpreet Singh"
+                src="/assets/joban-portrait.jpg"
+                alt="Studio portrait of Jobanpreet Singh Gill in a suit and turban"
                 fetchPriority="high"
               />
             </div>
-            <figcaption>Portrait placeholder / replace with Joban&apos;s photo</figcaption>
+            <figcaption>Jobanpreet Singh Gill / Computer Science &amp; Systems</figcaption>
           </figure>
 
           <aside className="hero__proof" aria-label="Portfolio summary" data-hero="proof">
@@ -276,11 +284,11 @@ export default function Portfolio() {
             <dl>
               <div>
                 <dt>03</dt>
-                <dd>Selected concept studies</dd>
+                <dd>Featured repositories</dd>
               </div>
               <div>
-                <dt>18</dt>
-                <dd>Tools and disciplines</dd>
+                <dt>06</dt>
+                <dd>Technical accreditations</dd>
               </div>
               <div>
                 <dt>2026</dt>
@@ -336,7 +344,7 @@ export default function Portfolio() {
         </section>
 
         <section id="projects" className="projects-section section-space" data-section>
-          <SectionHeader index="03" eyebrow="Selected studies" title="Concepts built to explore real interface problems." />
+          <SectionHeader index="03" eyebrow="Selected builds" title="Software engineered for real utility and exploration." />
           <div className="study-grid">
             {projects.map((project, index) => (
               <article
@@ -347,7 +355,7 @@ export default function Portfolio() {
                 <div className="study-card__image" data-parallax>
                   <img
                     src={project.image}
-                    alt=""
+                    alt={project.title}
                     loading="lazy"
                     width="1200"
                     height="900"
@@ -362,7 +370,7 @@ export default function Portfolio() {
                     {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
                   </ul>
                   <button className="text-action" type="button" onClick={() => setSelectedProject(project)}>
-                    Open study <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.6} />
+                    Inspect build <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.6} />
                   </button>
                 </div>
               </article>
@@ -371,7 +379,7 @@ export default function Portfolio() {
         </section>
 
         <section id="research" className="research-section section-space" data-section>
-          <SectionHeader index="04" eyebrow="Open notebook" title="Questions worth keeping in view." light />
+          <SectionHeader index="04" eyebrow="Technical investigations" title="Topics and systems under active study." light />
           <div className="research-list">
             {researchNotes.map((note) => (
               <article key={note.code} data-motion="row">
@@ -393,7 +401,7 @@ export default function Portfolio() {
         <section id="achievements" className="milestones-section" data-section>
           <div className="milestone-pin">
             <div className="milestone-topbar">
-              <p><span>05</span> / Portfolio journey</p>
+              <p><span>05</span> / Engineering journey</p>
               <p>Scroll to move across the chapter</p>
               <div className="milestone-controls" aria-label="Milestone navigation">
                 <button type="button" onClick={() => scrollMilestones(-1)} aria-label="Previous milestone">
@@ -408,14 +416,14 @@ export default function Portfolio() {
             <div className="milestone-viewport" ref={milestoneViewportRef}>
               <div className="milestone-track">
                 <div className="milestone-intro">
-                  <p className="mono-label">One system, ready to grow</p>
-                  <h2>Built in chapters, not decorated in layers.</h2>
-                  <p>On desktop this sequence uses vertical scroll to travel sideways. After the final card, the page continues normally.</p>
+                  <p className="mono-label">Growth through execution</p>
+                  <h2>Disciplined foundations, modern systems.</h2>
+                  <p>From low-level computing and algorithm design to generative AI and production web apps.</p>
                 </div>
                 {milestones.map((milestone) => (
                   <article className="milestone-card" key={milestone.index}>
                     <div className="milestone-card__image">
-                      <img src={milestone.image} alt="" loading="lazy" width="1200" height="900" />
+                      <img src={milestone.image} alt={milestone.title} loading="lazy" width="1200" height="900" />
                     </div>
                     <div className="milestone-card__body">
                       <p className="mono-label">{milestone.index} / {milestone.eyebrow}</p>
@@ -427,7 +435,7 @@ export default function Portfolio() {
                 ))}
                 <div className="milestone-endcap" aria-label="End of milestone sequence">
                   <span>End / 05</span>
-                  <p>Vertical flow resumes here.</p>
+                  <p>Credentials continue below.</p>
                   <ArrowDownRight aria-hidden="true" />
                 </div>
               </div>
@@ -436,7 +444,7 @@ export default function Portfolio() {
         </section>
 
         <section id="education" className="background-section section-space" data-section>
-          <SectionHeader index="06" eyebrow="Background" title="A truthful framework for the details still to come." />
+          <SectionHeader index="06" eyebrow="Credentials & Academics" title="Verified accreditations and technical education." />
           <div className="background-list">
             {backgroundCards.map((card) => (
               <article key={card.number} data-motion="row">
@@ -462,19 +470,27 @@ export default function Portfolio() {
         <section id="contact" className="contact-section" data-section>
           <div className="contact-section__intro" data-motion="block">
             <p className="mono-label">07 / Contact</p>
-            <h2>Have a useful problem to solve?</h2>
-            <p>Connect the verified channels below and this portfolio is ready for a real conversation.</p>
+            <h2>Have a project or opportunity?</h2>
+            <p>Connect across professional networks or get in touch directly via email.</p>
           </div>
           <div className="contact-list">
-            {contactItems.map(([label, detail], index) => {
-              const Icon = contactIcons[label];
+            {contactItems.map((item, index) => {
+              const Icon = contactIcons[item.label];
+              const isExternal = item.url.startsWith("http");
               return (
-                <button type="button" key={label} onClick={() => showUnverifiedNotice(label)} data-motion="row">
+                <a
+                  key={item.label}
+                  href={item.url}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="contact-list__link"
+                  data-motion="row"
+                >
                   <span className="contact-list__index">0{index + 1}</span>
                   <Icon aria-hidden="true" size={22} strokeWidth={1.5} />
-                  <span><strong>{label}</strong><small>{detail}</small></span>
+                  <span><strong>{item.label}</strong><small>{item.detail}</small></span>
                   <ArrowUpRight aria-hidden="true" />
-                </button>
+                </a>
               );
             })}
           </div>
@@ -485,9 +501,6 @@ export default function Portfolio() {
         </section>
       </main>
 
-      <div className={`site-notice${notice ? " is-visible" : ""}`} role="status" aria-live="polite">
-        {notice}
-      </div>
       <ProjectDialog project={selectedProject} onClose={closeProject} />
     </div>
   );

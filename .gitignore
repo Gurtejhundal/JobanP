@@ -4,6 +4,7 @@ dist/
 .prototype-seed/
 output/
 design-qa.md
+tmp/
 *.log
 .env*
 !.env.example
