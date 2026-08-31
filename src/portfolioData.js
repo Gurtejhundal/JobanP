@@ -29,13 +29,13 @@ export const openSourceCards = [
   {
     label: "SYSTEMS EXPLORATION",
     title: "Interfaces that make complex signals understandable.",
-    image: "/assets/project-climate.png",
+    image: "/assets/project-sentinel.png",
     tags: ["Product thinking", "Data", "Frontend"],
   },
   {
     label: "HUMAN-CENTRED BUILD",
     title: "Useful software shaped around access and clarity.",
-    image: "/assets/project-accessibility.png",
+    image: "/assets/project-image-converter.png",
     tags: ["Accessibility", "Interaction", "Testing"],
   },
 ];
@@ -43,39 +43,45 @@ export const openSourceCards = [
 export const projects = [
   {
     index: "01",
-    date: "Featured build",
-    title: "Image Converter",
-    image: "/assets/project-climate.png",
+    date: "Featured web utility",
+    title: "Image Magic Studio",
+    subtitle: "Image Converter & Optimization Engine",
+    image: "/assets/project-image-converter.png",
     repo: "https://github.com/Joban33/Image-Converter",
+    liveUrl: "https://image-converter-wine-seven.vercel.app",
     summary:
-      "A fast, distraction-free web utility to convert, compress, and process images with focused tooling and instant client-side feedback.",
+      "A fast, browser-based web utility to convert, compress, and edit images instantly with zero server-upload latency.",
     details:
-      "Built with Vite, React, and modern JavaScript to eliminate friction in routine image asset workflows. Eliminates upload wait times by leveraging browser-based conversion and clean responsive UI controls.",
-    tags: ["React", "Vite", "JavaScript", "Web Tool"],
+      "Built with Vite, React, and modern JavaScript to eliminate friction in image asset workflows. Features client-side format conversion across JPG, PNG, and WebP, drag-and-drop file ingestion, compression controls, resizing, and instant local downloads.",
+    tags: ["React", "Vite", "JavaScript", "Vercel Live", "Web Utility"],
   },
   {
     index: "02",
     date: "AI Engineering",
-    title: "Sentinal-AI",
-    image: "/assets/project-accessibility.png",
+    title: "Sentinel AI",
+    subtitle: "Enterprise Surveillance & Security System",
+    image: "/assets/project-sentinel.png",
     repo: "https://github.com/Joban33/Sentinal-AI",
+    liveUrl: "https://sentinal-ai.vercel.app",
     summary:
-      "An AI-powered monitoring and intelligence platform designed to extract meaningful signals from structured data streams.",
+      "An enterprise security and surveillance platform designed with zero-trust architecture and real-time anomaly recognition.",
     details:
-      "Explores applied machine learning, automated inference, and typed system architecture to synthesize operational data into clear, actionable summaries.",
-    tags: ["TypeScript", "AI / ML", "Systems", "Automation"],
+      "Explores applied machine learning, automated inference, and typed system architecture. Features dark precision layouts, real-time threat detection telemetry, and structured access control systems designed for enterprise facilities.",
+    tags: ["TypeScript", "AI / ML", "Security UI", "Vercel Live"],
   },
   {
     index: "03",
-    date: "Core Systems",
+    date: "Interactive Horology",
     title: "Aeternum",
-    image: "/assets/project-knowledge.png",
+    subtitle: "The Anatomy of Precision Watchmaking",
+    image: "/assets/project-aeternum.png",
     repo: "https://github.com/Joban33/Aeternum",
+    liveUrl: "https://aeternum.vercel.app",
     summary:
-      "An exploratory TypeScript systems project studying modular boundaries, type guarantees, and scalable state workflows.",
+      "A high-craft interactive luxury horology digital experience exploring mechanical movement layers and exploded diagrams.",
     details:
-      "Focuses on clean software boundaries, deterministic runtime behavior, and maintainable execution patterns across interconnected components.",
-    tags: ["TypeScript", "Architecture", "Experiments"],
+      "A digital showcase studying precision mechanical watchmaking. Features multi-chapter editorial transitions, exploded 3D component layer views, technical specifications, and smooth interactive choreography.",
+    tags: ["TypeScript", "Editorial UI", "Motion Choreography", "Vercel Live"],
   },
 ];
 
@@ -109,30 +115,30 @@ export const researchNotes = [
 export const milestones = [
   {
     index: "01",
-    eyebrow: "FOUNDATIONS",
-    title: "Core Programming & Logic",
+    eyebrow: "UTILITIES",
+    title: "Fast Client-Side Applications",
     description:
-      "Rigorous training across C++ (Cisco Networking Academy) and Python (GeeksforGeeks SkillUp), establishing strong computational fundamentals.",
-    image: "/assets/project-accessibility.png",
-    tag: "Certified Foundations",
+      "Built and shipped Image Magic Studio on Vercel, providing fast client-side image conversions and compression without server bloat.",
+    image: "/assets/project-image-converter.png",
+    tag: "Shipped on Vercel",
   },
   {
     index: "02",
     eyebrow: "INTELLIGENCE",
-    title: "Generative AI & ML Systems",
+    title: "AI Security & Systems Engineering",
     description:
-      "Completion of Google Cloud Generative AI Studio, Infosys Springboard AI, and BlockseBlock AI Hands-on Bootcamp.",
-    image: "/assets/project-climate.png",
-    tag: "Applied AI",
+      "Designed Sentinel AI for enterprise-grade threat telemetry and surveillance, combining modern TypeScript and AI inference architectures.",
+    image: "/assets/project-sentinel.png",
+    tag: "AI Architecture",
   },
   {
     index: "03",
-    eyebrow: "EXECUTION",
-    title: "Building & Shipping Products",
+    eyebrow: "CRAFT",
+    title: "High-End Editorial Experiences",
     description:
-      "Delivering open-source utilities like Image Converter, AI Sentinels, and modular web interfaces built for real utility.",
-    image: "/assets/project-knowledge.png",
-    tag: "Active Shipping",
+      "Created Aeternum, an interactive horology journey featuring multi-layer exploded mechanics and precision digital craftsmanship.",
+    image: "/assets/project-aeternum.png",
+    tag: "Precision UI",
   },
 ];
 
@@ -145,9 +151,9 @@ export const backgroundCards = [
     title: "Computer Science & Engineering",
     subtitle: "Software Engineering, Data Structures & Algorithms",
     bullets: [
-      "Focus on system design, algorithmic problem solving, and modern full-stack engineering.",
-      "Hands-on coursework covering object-oriented programming, data structures, and web technologies.",
-      "Active commitment to building real-world projects alongside foundational theory.",
+      { text: "Focus on system design, algorithmic problem solving, and modern full-stack engineering." },
+      { text: "Hands-on coursework covering object-oriented programming, data structures, and web technologies." },
+      { text: "Active commitment to building real-world projects alongside foundational theory." },
     ],
     result: "B.Tech / Computer Science",
   },
@@ -159,12 +165,29 @@ export const backgroundCards = [
     title: "Technical Certifications & Accreditations",
     subtitle: "Cisco, Google Cloud, Infosys, GeeksforGeeks, OpenxAI",
     bullets: [
-      "C++ Essentials 1 — Cisco Networking Academy & OpenEDG (Jan 2026)",
-      "Introduction to Generative AI Studio — Google Cloud / Simplilearn (Jan 2026, Code: 9786973)",
-      "Introduction to Artificial Intelligence — Infosys Springboard (Mar 2026)",
-      "Hands-on AI Bootcamp — BlockseBlock & OpenxAI (Aug 2025)",
-      "Python Skill Up — GeeksforGeeks & Nation SkillUp",
-      "Leadership Fundamentals — EduTech Hub (Oct 2025, Code: EDU/10/25/LF-A671)",
+      {
+        text: "C++ Essentials 1 — Cisco Networking Academy & OpenEDG (Jan 2026)",
+        link: "https://drive.google.com/file/d/1cZkvVvADtM46PFW6eucvieYwYpcaaGBh/view?usp=drive_link",
+      },
+      {
+        text: "Introduction to Generative AI Studio — Google Cloud / Simplilearn (Jan 2026)",
+        link: "https://drive.google.com/file/d/1fKBz7dpFAytNUCuFV5tuEAHgE3akd9UC/view?usp=drive_link",
+      },
+      {
+        text: "Introduction to Artificial Intelligence — Infosys Springboard (Mar 2026)",
+        link: "https://drive.google.com/file/d/1cEgUHw9La53eAXyjMwiHSxUm6VmK3wFD/view?usp=drive_link",
+      },
+      {
+        text: "Hands-on AI Bootcamp — BlockseBlock & OpenxAI (Aug 2025)",
+        link: "https://drive.google.com/file/d/1OPuNVASFksxpJ2TB_hS9ttOul4WiBgMv/view?usp=drive_link",
+      },
+      {
+        text: "Leadership Fundamentals — EduTech Hub (Oct 2025)",
+        link: "https://drive.google.com/file/d/11i8fsms5IEnzhH03_hcKo42dyE8QHdCf/view?usp=drive_link",
+      },
+      {
+        text: "Python Skill Up — GeeksforGeeks & Nation SkillUp",
+      },
     ],
     result: "6 Verified Accreditations",
   },

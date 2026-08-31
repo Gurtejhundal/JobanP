@@ -6,6 +6,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Code2,
+  ExternalLink,
   Mail,
   Menu,
   X,
@@ -184,8 +185,20 @@ function ProjectDialog({ project, onClose }) {
           <ul className="tag-list" aria-label="Project tags">
             {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
           </ul>
-          {project.repo && (
-            <div style={{ marginTop: "1.5rem" }}>
+          <div className="dialog-actions" style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginTop: "1.5rem" }}>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="primary-action"
+                style={{ display: "inline-flex", marginTop: 0, background: "var(--ink)", color: "var(--paper)" }}
+              >
+                Launch Live App
+                <ArrowUpRight aria-hidden="true" size={17} strokeWidth={1.6} />
+              </a>
+            )}
+            {project.repo && (
               <a
                 href={project.repo}
                 target="_blank"
@@ -193,12 +206,12 @@ function ProjectDialog({ project, onClose }) {
                 className="primary-action"
                 style={{ display: "inline-flex", marginTop: 0 }}
               >
-                View Repository on GitHub
-                <ArrowUpRight aria-hidden="true" size={17} strokeWidth={1.6} />
+                View on GitHub
+                <Code2 aria-hidden="true" size={17} strokeWidth={1.6} />
               </a>
-            </div>
-          )}
-          <p className="dialog-note">Open-source build repository on GitHub.</p>
+            )}
+          </div>
+          <p className="dialog-note">Verified build repository · Shipped on Vercel &amp; GitHub.</p>
         </div>
       </section>
     </div>
@@ -284,11 +297,11 @@ export default function Portfolio() {
             <dl>
               <div>
                 <dt>03</dt>
-                <dd>Featured repositories</dd>
+                <dd>Shipped builds on Vercel</dd>
               </div>
               <div>
                 <dt>06</dt>
-                <dd>Technical accreditations</dd>
+                <dd>Verified certifications</dd>
               </div>
               <div>
                 <dt>2026</dt>
@@ -369,9 +382,22 @@ export default function Portfolio() {
                   <ul className="tag-list" aria-label={`${project.title} tags`}>
                     {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
                   </ul>
-                  <button className="text-action" type="button" onClick={() => setSelectedProject(project)}>
-                    Inspect build <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.6} />
-                  </button>
+                  <div style={{ display: "flex", gap: "1rem", marginTop: "auto", flexWrap: "wrap" }}>
+                    <button className="text-action" type="button" onClick={() => setSelectedProject(project)}>
+                      Inspect build <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.6} />
+                    </button>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-action"
+                        style={{ borderBottomColor: "var(--signal)", color: "var(--signal)" }}
+                      >
+                        Launch live <ExternalLink aria-hidden="true" size={16} strokeWidth={1.8} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}
@@ -418,7 +444,7 @@ export default function Portfolio() {
                 <div className="milestone-intro">
                   <p className="mono-label">Growth through execution</p>
                   <h2>Disciplined foundations, modern systems.</h2>
-                  <p>From low-level computing and algorithm design to generative AI and production web apps.</p>
+                  <p>From low-level computing and algorithm design to generative AI and production web apps on Vercel.</p>
                 </div>
                 {milestones.map((milestone) => (
                   <article className="milestone-card" key={milestone.index}>
@@ -459,7 +485,22 @@ export default function Portfolio() {
                   <span>{card.subtitle}</span>
                 </div>
                 <ul>
-                  {card.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                  {card.bullets.map((bullet, bIndex) => {
+                    const text = typeof bullet === "string" ? bullet : bullet.text;
+                    const link = typeof bullet === "object" ? bullet.link : null;
+                    return (
+                      <li key={bIndex}>
+                        {link ? (
+                          <a href={link} target="_blank" rel="noopener noreferrer">
+                            {text}
+                            <ArrowUpRight aria-hidden="true" size={14} strokeWidth={1.8} />
+                          </a>
+                        ) : (
+                          text
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
                 <p className="background-list__result">{card.result}</p>
               </article>

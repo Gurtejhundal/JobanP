@@ -1015,6 +1015,20 @@ ul {
   content: "";
 }
 
+.background-list article > ul li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 180ms ease;
+}
+
+.background-list article > ul li a:hover {
+  color: var(--signal);
+}
+
 .background-list__result {
   padding-top: 0.15rem;
   font: 500 0.66rem/1.45 "IBM Plex Mono", monospace;
