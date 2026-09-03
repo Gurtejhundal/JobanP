@@ -1,4 +1,4 @@
-# Design System Master File — Jobanpreet Portfolio
+# Design System Master File — Portfolio System
 
 > **LOGIC:** When building a specific page, first check `design-system/pages/[page-name].md`.
 > If that file exists, its rules **override** this Master file.
@@ -6,9 +6,9 @@
 
 ---
 
-**Project:** Jobanpreet Portfolio  
+**Project:** Portfolio  
 **Design Philosophy:** Swiss Field Notes (Monochrome / High Contrast / Technical Editorial)  
-**Persona:** Jobanpreet Singh Gill — Computer Science Student & Software Builder  
+**Persona:** Mohabbatpal Singh Chahal — Computer Science Student & Software Developer  
 
 ---
 
@@ -46,6 +46,6 @@
 
 ## Content Guardrails
 
-1. Truthful credentials only: Jobanpreet Singh Gill's verified Cisco, Google Cloud, Infosys, GeeksforGeeks, and OpenxAI certifications.
-2. Verified project repositories: Direct links to Joban33's GitHub repositories (`Image-Converter`, `Sentinal-AI`, `Aeternum`).
-3. Direct contact channels: GitHub (`Joban33`), LinkedIn (`jobanpreet-singh-gill`), and email (`jobanpreetsinghgill@gmail.com`).
+1. Truthful credentials only: Mohabbatpal Singh Chahal's verified Python Essentials 1 (Cisco / Python Institute), Introduction to Generative AI (IBM / edX), and LPU B.Tech CSE education.
+2. Verified project repositories: Direct links to Mohabbatpal's projects (`LedgerX`, `Chahal Restro`, `Smart Dairy Tool`, `Chess Game`).
+3. Direct contact channels: GitHub (`mohabbat-chahal`), LinkedIn (`mohabbatpal-singh-chahal`), email (`Mohabbatpalsinghchahal@gmail.com`), and mobile (`+91 8078740004`).

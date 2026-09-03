@@ -9,6 +9,7 @@ import {
   ExternalLink,
   Mail,
   Menu,
+  Phone,
   X,
 } from "lucide-react";
 import {
@@ -27,19 +28,19 @@ const skillGroups = [
   {
     index: "01",
     title: "Build",
-    note: "Languages and tools for turning an idea into a working system.",
+    note: "Languages and tools for turning ideas into working web and desktop applications.",
     items: skills.slice(0, 6),
   },
   {
     index: "02",
     title: "System",
-    note: "The practical layer that keeps software dependable, intelligent, and fast.",
+    note: "Modern backend services, type-safe ORMs, database schemas, and AI integration.",
     items: skills.slice(6, 12),
   },
   {
     index: "03",
     title: "Craft",
-    note: "Engineering disciplines and standards that deliver real product execution.",
+    note: "Disciplines that keep software dependable, responsive, and cleanly engineered.",
     items: skills.slice(12),
   },
 ];
@@ -52,21 +53,21 @@ const principles = [
   },
   {
     index: "B",
-    title: "Access",
-    copy: "Treat keyboard, contrast, motion, and readable structure as core product work.",
+    title: "Reliability",
+    copy: "Design clean relational schemas, type guarantees, and dependable API boundaries.",
   },
   {
     index: "C",
-    title: "Maintainability",
-    copy: "Prefer systems that can absorb real content without needing a visual rebuild.",
+    title: "Continuous Practice",
+    copy: "Strengthen computational problem-solving with regular algorithmic learning and hands-on builds.",
   },
 ];
 
 const heroCapabilities = [
-  ["01", "Interface systems", "Clear components, responsive grids, and resilient layouts."],
-  ["02", "AI & ML integration", "Generative AI pipelines, studio architectures, and structured agents."],
-  ["03", "Systems & performance", "Typed data pipelines, low-latency execution, and C++ foundations."],
-  ["04", "Practical execution", "Focused web utilities and tools shipped to production."],
+  ["01", "Full-stack web builds", "React.js, Vite, Tailwind CSS, and Node.js."],
+  ["02", "Backend & database systems", "NestJS, Prisma ORM, PostgreSQL, and MySQL."],
+  ["03", "AI & machine learning", "Generative AI (IBM/edX) and applied ML foundations."],
+  ["04", "Core programming & logic", "Python (Cisco certified), C, C++, and problem solving."],
 ];
 
 const trackedSectionIds = ["dossier", ...navItems.map(([, id]) => id)];
@@ -75,6 +76,7 @@ const contactIcons = {
   GitHub: Code2,
   LinkedIn: BriefcaseBusiness,
   Email: Mail,
+  Mobile: Phone,
 };
 
 function SectionHeader({ index, eyebrow, title, light = false }) {
@@ -92,9 +94,9 @@ function SectionHeader({ index, eyebrow, title, light = false }) {
 function Header({ activeSection, menuOpen, setMenuOpen }) {
   return (
     <header className="site-header">
-      <a className="brand" href="#dossier" aria-label="Jobanpreet Singh Gill, back to top">
-        <span className="brand__mark">JSG</span>
-        <span className="brand__name">Jobanpreet<br />Singh Gill</span>
+      <a className="brand" href="#dossier" aria-label="Mohabbatpal Singh Chahal, back to top">
+        <span className="brand__mark">MSC</span>
+        <span className="brand__name">Mohabbatpal<br />Singh Chahal</span>
       </a>
 
       <nav
@@ -119,7 +121,7 @@ function Header({ activeSection, menuOpen, setMenuOpen }) {
 
       <a
         className="header-cta"
-        href="https://github.com/Joban33"
+        href={profile.github}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -211,7 +213,7 @@ function ProjectDialog({ project, onClose }) {
               </a>
             )}
           </div>
-          <p className="dialog-note">Verified build repository · Shipped on Vercel &amp; GitHub.</p>
+          <p className="dialog-note">Software project build by Mohabbatpal Singh Chahal.</p>
         </div>
       </section>
     </div>
@@ -268,11 +270,11 @@ export default function Portfolio() {
       <main id="main-content">
         <section id="dossier" className="hero" data-section>
           <div className="hero__statement">
-            <p className="hero__hello" data-hero="label">Hello, I&apos;m Jobanpreet.</p>
-            <h1 aria-label="Software builder and computer science student">
+            <p className="hero__hello" data-hero="label">Hello, I&apos;m Mohabbatpal.</p>
+            <h1 aria-label="Software developer and computer science student">
               <span data-hero="line">Software</span>
-              <span className="hero__serif" data-hero="line">&amp; systems</span>
-              <span data-hero="line">builder</span>
+              <span className="hero__serif" data-hero="line">&amp; full-stack</span>
+              <span data-hero="line">developer</span>
             </h1>
             <p className="hero__lead" data-hero="copy">{profile.strapline}</p>
             <a className="primary-action" href="#projects" data-hero="copy">
@@ -284,28 +286,28 @@ export default function Portfolio() {
           <figure className="hero__portrait" data-hero="portrait">
             <div className="hero__portrait-frame">
               <img
-                src="/assets/joban-portrait.jpg"
-                alt="Studio portrait of Jobanpreet Singh Gill in a suit and turban"
+                src="/assets/mohabbat-portrait.jpg"
+                alt="Portrait of Mohabbatpal Singh Chahal in a turban and vest"
                 fetchPriority="high"
               />
             </div>
-            <figcaption>Jobanpreet Singh Gill / Computer Science &amp; Systems</figcaption>
+            <figcaption>Mohabbatpal Singh Chahal / Computer Science &amp; Engineering</figcaption>
           </figure>
 
           <aside className="hero__proof" aria-label="Portfolio summary" data-hero="proof">
             <p className="mono-label">Portfolio proof</p>
             <dl>
               <div>
+                <dt>200+</dt>
+                <dd>Problems solved online</dd>
+              </div>
+              <div>
+                <dt>04</dt>
+                <dd>Featured projects &amp; tools</dd>
+              </div>
+              <div>
                 <dt>03</dt>
-                <dd>Shipped builds on Vercel</dd>
-              </div>
-              <div>
-                <dt>06</dt>
-                <dd>Verified certifications</dd>
-              </div>
-              <div>
-                <dt>2026</dt>
-                <dd>Current portfolio edition</dd>
+                <dd>Cisco &amp; IBM credentials</dd>
               </div>
             </dl>
             <p className="hero__availability"><span /> {profile.status}</p>
@@ -444,7 +446,7 @@ export default function Portfolio() {
                 <div className="milestone-intro">
                   <p className="mono-label">Growth through execution</p>
                   <h2>Disciplined foundations, modern systems.</h2>
-                  <p>From low-level computing and algorithm design to generative AI and production web apps on Vercel.</p>
+                  <p>From algorithmic problem solving and desktop utilities to NestJS backends and responsive React applications.</p>
                 </div>
                 {milestones.map((milestone) => (
                   <article className="milestone-card" key={milestone.index}>
@@ -461,7 +463,7 @@ export default function Portfolio() {
                 ))}
                 <div className="milestone-endcap" aria-label="End of milestone sequence">
                   <span>End / 05</span>
-                  <p>Credentials continue below.</p>
+                  <p>Education continues below.</p>
                   <ArrowDownRight aria-hidden="true" />
                 </div>
               </div>
@@ -470,7 +472,7 @@ export default function Portfolio() {
         </section>
 
         <section id="education" className="background-section section-space" data-section>
-          <SectionHeader index="06" eyebrow="Credentials & Academics" title="Verified accreditations and technical education." />
+          <SectionHeader index="06" eyebrow="Credentials & Academics" title="Academic record and technical certifications." />
           <div className="background-list">
             {backgroundCards.map((card) => (
               <article key={card.number} data-motion="row">
@@ -512,11 +514,11 @@ export default function Portfolio() {
           <div className="contact-section__intro" data-motion="block">
             <p className="mono-label">07 / Contact</p>
             <h2>Have a project or opportunity?</h2>
-            <p>Connect across professional networks or get in touch directly via email.</p>
+            <p>Connect across professional networks or get in touch directly via email or phone.</p>
           </div>
           <div className="contact-list">
             {contactItems.map((item, index) => {
-              const Icon = contactIcons[item.label];
+              const Icon = contactIcons[item.label] || Mail;
               const isExternal = item.url.startsWith("http");
               return (
                 <a
